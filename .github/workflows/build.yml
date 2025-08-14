@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write  # Ensure Actions can push to gh-pages
+      contents: write
 
     steps:
       - name: Checkout main branch
@@ -23,10 +23,12 @@ jobs:
           bundler-cache: true
 
       - name: Install dependencies
-        run: bundle install
+        run: |
+          gem install jekyll
+          gem install kramdown
 
       - name: Build Jekyll site
-        run: bundle exec jekyll build
+        run: jekyll build
 
       - name: Deploy to GitHub Pages branch
         uses: peaceiris/actions-gh-pages@v4
