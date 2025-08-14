@@ -1,0 +1,13 @@
+title: My Events Site
+description: A site listing upcoming events
+markdown: kramdown
+
+plugins:
+  - jekyll-datapage-generator
+
+page_gen-dirs: true
+page_gen:
+  - data: 'events'
+    template: 'event'
+    name: 'id'
+    dir: 'events'
