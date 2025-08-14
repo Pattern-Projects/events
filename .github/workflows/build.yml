@@ -20,10 +20,13 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
+          bundler-cache: true  # Caches gems between runs
 
-      - name: Install dependencies
+      - name: Ensure required gems are installed
         run: |
-          gem install bundler
+          echo 'source "https://rubygems.org"' > Gemfile
+          echo 'gem "jekyll", "~> 4.3.2"' >> Gemfile
+          echo 'gem "kramdown-parser-gfm"' >> Gemfile
           bundle install
 
       - name: Build Jekyll site
