@@ -3,7 +3,7 @@ layout: default
 title: "Upcoming Events"
 ---
 
-<header><h1>Upcoming Events</h1></header>
+<header><h1>Coming Events</h1></header>
 <div class="container">
   <div class="toggle-view"><button id="toggle-view">Toggle View</button></div>
   <div id="event-list" class="event-list">
