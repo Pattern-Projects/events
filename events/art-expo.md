@@ -1,8 +1,6 @@
 ---
-layout: default
+layout: event
 title: Art Expo
 date: 2025-11-20
-location: Paris
+description: Exhibition of contemporary art from international artists.
 ---
-
-<p>A showcase of modern art.</p>
