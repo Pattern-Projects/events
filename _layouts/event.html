@@ -1,5 +1,23 @@
----
-layout: default
----
-<p><strong>Date:</strong> {{ page.date }}</p>
-<p>{{ page.description }}</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/events/assets/style.css">
+</head>
+<body>
+  <header><h1>{{ page.title }}</h1></header>
+  <div class="container">
+    {% if page.poster %}
+    <img src="{{ page.poster }}" alt="{{ page.title }} poster" style="max-width:100%; border-radius:8px;">
+    {% endif %}
+    <p><strong>Date:</strong> {{ page.date | date: "%B %d, %Y" }}</p>
+    {% if page.time %}<p><strong>Time:</strong> {{ page.time }}</p>{% endif %}
+    {% if page.organisers %}<p><strong>Organisers:</strong> {{ page.organisers }}</p>{% endif %}
+    {% if page.speakers %}<p><strong>Speakers:</strong> {{ page.speakers }}</p>{% endif %}
+    {% if page.type %}<p><strong>Type:</strong> {{ page.type }}</p>{% endif %}
+    {% if page.website %}<p><a href="{{ page.website }}" target="_blank">Visit Website</a></p>{% endif %}
+  </div>
+</body>
+</html>
